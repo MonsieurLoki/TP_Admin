@@ -10,7 +10,6 @@ $TTL 86400
 
 ; Name servers
 @       IN      NS      ns.l2-4.ephec-ti.be.
-@       IN      NS      ns2.l2-4.ephec-ti.be.
 ; A Records
 @       IN      A       54.37.13.151
 www     IN      A       54.37.13.151
