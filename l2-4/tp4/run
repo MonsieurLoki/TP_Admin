@@ -1,0 +1,28 @@
+docker stop dns
+docker rm dns
+
+docker volume rm mon_vol_dns2
+
+docker run \
+	-d \
+        --name=dns \
+        -p 53:53/udp \
+        -p 53:53/tcp \
+        --volume mon_vol_dns2:/etc/bind/ \
+        internetsystemsconsortium/bind9:9.18 \
+        named -g -u bind
+
+# --mount type=bind,source="$(pwd)"/named.conf,target=/etc/bind/named.conf \
+
+sleep 1
+
+docker cp named.conf dns:/etc/bind/
+docker cp l2-4.ephec-ti.be dns:/etc/bind/
+docker exec dns chmod 777 /etc/bind
+docker exec dns service named reload
+
+dig www.l2-4.ephec-ti.be +dnssec
+# dig www.woodytoys.l2-4.ephec-ti.be +dnssec
+
+
+# --mount type=bind,source="$(pwd)"/l2-4.ephec-ti.be,target=/etc/bind/l2-4.ephec-ti.be \

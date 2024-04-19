@@ -1,0 +1,1 @@
+docker build -t mon-php -f DockerfilePhp .
