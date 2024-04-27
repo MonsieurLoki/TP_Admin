@@ -1,8 +1,0 @@
-docker stop mariadb_cont
-docker rm mariadb_cont
-docker run \
-        -d \
-        --name=mariadb_cont \
-        -e MYSQL_ROOT_PASSWORD=mypass \
-        mariadb
-docker ps -a  --filter "name=mariadb_cont"

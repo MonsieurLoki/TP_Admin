@@ -1,4 +1,0 @@
-2024-03-30 15:14:27+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.1.4+maria~ubu2204 started.
-2024-03-30 15:14:28+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
-2024-03-30 15:14:28+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.1.4+maria~ubu2204 started.
-2024-03-30 15:14:28+00:00 [Note] [Entrypoint]: MariaDB upgrade not required

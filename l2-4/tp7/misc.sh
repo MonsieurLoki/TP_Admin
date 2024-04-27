@@ -9,7 +9,7 @@ RCPT TO: titi@l2-4.ephec-ti.be
 DATA 
 Subject: TEST MESSAGE 1
 Date: test X
-From: LOKIII
+From: toto@l2-4.ephec-ti.be
 Bonjour MR TITI, 
 Comment how are u?
 .
