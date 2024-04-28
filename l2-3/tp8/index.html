@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
             margin: 0;
             padding: 0;
         }
+
         .container {
             max-width: 800px;
             margin: 50px auto;
@@ -19,21 +21,46 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         h1 {
             color: #333;
             text-align: center;
         }
+
         p {
             color: #666;
             line-height: 1.6;
         }
     </style>
 </head>
+
 <body>
+    <script>
+        // Function to fetch the container's hostname or IP address
+        function getContainerInfo() {
+            fetch('/container-info-ip')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('container-id').innerText = data;
+                })
+                .catch(error => {
+                    console.error('Error fetching container info:', error);
+                });
+        }
+
+        // Call the function on page load
+        window.onload = getContainerInfo;
+    </script>
+
     <div class="container">
-        <h1>Bienvenue sur notre site personnalisé !</h1>
+        <h1>Bienvenue sur notre site personnalisé 2!</h1>
         <p>Cette page a été créée spécialement pour notre image Docker personnalisée.</p>
         <p>Vous pouvez modifier cette page comme bon vous semble pour répondre à vos besoins.</p>
     </div>
+    <p>Nous sommes dans le container : </p>
+    <div id="container-id">
+        xxxxx (attend la réponse)
+    </div>
 </body>
+
 </html>

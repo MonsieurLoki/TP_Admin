@@ -1,2 +1,9 @@
 docker build -t drapsag/mon-nginx:1.1 .
 docker push drapsag/mon-nginx:1.1
+docker stop cont-nginx-tp8
+docker run \
+    --name cont-nginx-tp8 \
+    -p 8080:80 \
+    --rm \
+    -d \
+    drapsag/mon-nginx:1.1
