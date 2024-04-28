@@ -4,3 +4,10 @@ docker swarm join --token SWMTKN-1-2vv3t49fiz7vb1tq02351pkyzqz1jkwz5y2u9hpupi5ci
 docker swarm join-token worken
 
 docker service update --replicas 6 web
+
+mysql -h 172.26.0.2 -u root -p
+
+docker exec -ti services-db-1 mysql -u root -ppass --execute "show databases; use woody; "
+
+docker exec -ti services-db-1 bash
+mysql -u root ppass 
