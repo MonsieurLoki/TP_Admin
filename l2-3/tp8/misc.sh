@@ -10,4 +10,32 @@ mysql -h 172.26.0.2 -u root -p
 docker exec -ti services-db-1 mysql -u root -ppass --execute "show databases; use woody; "
 
 docker exec -ti services-db-1 bash
-mysql -u root ppass 
+
+mysql -u root -ppass 
+show databases;
+use woody;
+ select * from product;
+
+# token actuel
+docker swarm join --token SWMTKN-1-0fgy6omacj22d44xhg3iqijci5jy92usd1gid198mcaldpsz7u-8rfdg14tgzou6aovwc1pnyfl6 54.37.13.151:2377
+
+
+sudo ufw allow 2377
+sudo ufw allow 2376
+sudo ufw allow 2375
+sudo ufw allow 2346
+sudo ufw allow 2389
+
+cd ~/TP_Admin/l2-3/tp9/woodytoys/services
+bash build_push.sh
+docker stack deploy -c docker-compose.yml mystack
+docker stack ls
+docker stack ps mystack
+docker stack rm mystack
+docker stack services mystack
+docker service scale mystack_db=1
+docker service scale mystack_api=
+docker service scale mystack_front=
+docker service scale mystack_reverse=
+
+docker stack ps mystack
