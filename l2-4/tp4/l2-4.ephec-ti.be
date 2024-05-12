@@ -32,6 +32,7 @@ blog    IN      CNAME   www.l2-4.ephec-ti.be.
 ns      IN      A       54.37.13.151
 mail    IN      A       54.37.13.151
 woody   IN      A       54.37.13.151
+cdn.woody IN CNAME cl-glf876fc7c.gcdn.co.
 ;cdn.woody IN    CNAME   woody
 
 maxime    IN      NS      ns.maxime.l2-4.ephec-ti.be.

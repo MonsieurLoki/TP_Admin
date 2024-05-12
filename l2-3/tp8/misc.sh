@@ -23,8 +23,8 @@ docker swarm join --token SWMTKN-1-0fgy6omacj22d44xhg3iqijci5jy92usd1gid198mcald
 sudo ufw allow 2377
 sudo ufw allow 2376
 sudo ufw allow 2375
-sudo ufw allow 2346
-sudo ufw allow 2389
+sudo ufw allow 7946
+sudo ufw allow 4789
 
 cd ~/TP_Admin/l2-3/tp9/woodytoys/services
 bash build_push.sh
@@ -34,8 +34,9 @@ docker stack ps mystack
 docker stack rm mystack
 docker stack services mystack
 docker service scale mystack_db=1
-docker service scale mystack_api=
-docker service scale mystack_front=
-docker service scale mystack_reverse=
+docker service scale mystack_api=1
+docker service scale mystack_front=1
+docker service scale mystack_reverse=0
+docker service scale mystack_redis=1
 
 docker stack ps mystack
