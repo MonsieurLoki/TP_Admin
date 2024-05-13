@@ -4,7 +4,7 @@ set -e
 
 docker login
 
-cd ~/TP_Admin/l2-3/tp9.1/servicess
+cd ~/TP_Admin/l2-3/tp9.1/services
 
 default_version="3.5"
 version=${1:-"$default_version"}
